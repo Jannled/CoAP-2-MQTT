@@ -25,6 +25,7 @@
         "GNSS",
         "grafana",
         "hostinfo",
+        "INFLUXD",
         "Jannik",
         "Jannled",
         "keepalive",
@@ -41,6 +42,7 @@
         "pygments",
         "rpipico",
         "Schmöle",
+        "secretstores",
         "venv",
         "watchtowerr",
         "Yeet"
