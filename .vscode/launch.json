@@ -8,7 +8,7 @@
             "name": "Launch CoAP 2 MQTT",
             "type": "debugpy",
             "request": "launch",
-            "module": "coap2mqtt.minimal-mqtt",
+            "module": "coap2mqtt.coap-server",
             "env": {
                 /* TODO Using the Mosquitto public demo server. Replace this with your own */
                 "MQTT_SERVER": "test.mosquitto.org"

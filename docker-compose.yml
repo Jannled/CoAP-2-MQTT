@@ -1,3 +1,4 @@
+# Containers are prefixed with this name, if not overridden by 
 name: iot-ws24
 
 # docker volume create ws24_influxdb
@@ -97,12 +98,13 @@ services:
     configs:
       - source: mosquitto.conf
         target: /mosquitto/config/mosquitto.conf
+    profiles: [mqtt, tig]
   
   # CoAP
   coap:
     restart: unless-stopped
     build:
-      context: ./coap-server
+      context: ./coap2mqtt
       dockerfile: Dockerfile
     environment: 
       - MQTT_SERVER=mqtt
@@ -111,6 +113,7 @@ services:
       - "5683:5683/udp"
     depends_on:
       - mqtt
+    profiles: [mqtt, tig]
 
 
 # All secrets

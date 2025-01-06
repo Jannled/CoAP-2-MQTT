@@ -10,7 +10,7 @@ LABEL author="IOT students from WS24/25 @ Fachhochschule Dortmund"
 COPY requirementsMinimal.txt .
 RUN pip install --no-cache-dir -r requirementsMinimal.txt
 
-# Create new user to drop down privilegues
+# Create new user to drop down privileges
 RUN groupadd -r coap-server && useradd -r -g coap-server coap-server
 USER coap-server
 WORKDIR /usr/src/coap-server
@@ -21,4 +21,4 @@ EXPOSE 5683
 # EXPOSE 5684
 
 # Run the CoAP Server when the container launches
-CMD ["python", "-m", "minimal-mqtt"]
+CMD ["python", "-m", "coap-server"]

@@ -1,6 +1,22 @@
 {
+    "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingModuleSource": "none"
+    },
+    "python.terminal.activateEnvironment": true,
+
+    // Display formatting aid
+	"editor.rulers": [90, 120], // 90ish for Python, see: https://www.youtube.com/watch?v=wf-BqAjZb8M&t=260s
+
+	"[git-commit]": {
+		"editor.rulers": [50]
+	},
+
     "cSpell.words": [
         "aiocoap",
+        "cbor",
+        "centurylinklabs",
         "coap",
         "containrrr",
         "contentformat",
@@ -26,12 +42,7 @@
         "rpipico",
         "Schmöle",
         "venv",
-        "watchtowerr"
-    ],
-    "python.languageServer": "Pylance",
-    "python.analysis.typeCheckingMode": "basic",
-    "python.analysis.diagnosticSeverityOverrides": {
-        "reportMissingModuleSource": "none"
-    },
-    "python.terminal.activateEnvironment": true
+        "watchtowerr",
+        "Yeet"
+    ]
 }

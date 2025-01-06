@@ -9,13 +9,17 @@ The CoAP server will relay all messaged received under the `sensor/data` endpoin
 
 ## Launch
 ```bash
-# With the TIG Stack
-docker compose up --profile tig --detach
+# Need to be run every time you update the Python file
+docker compose build
 
-# Only the CoAP & MQTT Server
-docker compose up --detach
+# Start with the TIG Stack
+docker compose --profile tig up --detach
+
+# Start only the CoAP & MQTT Server
+docker compose --profile mqtt up --detach
 ```
 
+## Environment Variables
 - `COAP_BIND_NAME`
 - `COAP_PORT`
 - `MQTT_SERVER`
