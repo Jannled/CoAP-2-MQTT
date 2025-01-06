@@ -1,0 +1,18 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch CoAP 2 MQTT",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "coap2mqtt.minimal-mqtt",
+            "env": {
+                /* TODO Using the Mosquitto public demo server. Replace this with your own */
+                "MQTT_SERVER": "test.mosquitto.org"
+            }
+        }
+    ]
+}

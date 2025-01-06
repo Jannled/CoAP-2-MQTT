@@ -1,0 +1,37 @@
+{
+    "cSpell.words": [
+        "aiocoap",
+        "coap",
+        "containrrr",
+        "contentformat",
+        "DTLS",
+        "fhydrate",
+        "GNSS",
+        "grafana",
+        "hostinfo",
+        "Jannik",
+        "Jannled",
+        "keepalive",
+        "levelname",
+        "LINKFORMAT",
+        "linkheader",
+        "mosquitto",
+        "mqtt",
+        "NBIOT",
+        "paho",
+        "pico",
+        "Pico",
+        "pycache",
+        "pygments",
+        "rpipico",
+        "Schmöle",
+        "venv",
+        "watchtowerr"
+    ],
+    "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingModuleSource": "none"
+    },
+    "python.terminal.activateEnvironment": true
+}
