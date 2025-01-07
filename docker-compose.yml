@@ -167,6 +167,7 @@ configs:
         ]
         data_format = "value"
         topic_tag = "topic"
+        data_format = "json"
 
       [[outputs.file]]
         files = ["stdout"]
