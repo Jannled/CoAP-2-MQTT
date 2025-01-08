@@ -10,7 +10,7 @@ The CoAP server will relay all messaged received under the `sensor/data` endpoin
 ## Launch
 ```bash
 # Need to be run every time you update the Python file
-docker compose build
+docker compose --profile tig build --no-cache
 
 # Start with the TIG Stack
 docker compose --profile tig up --detach

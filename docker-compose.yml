@@ -165,9 +165,8 @@ configs:
         topics = [
           "sensor/#"
         ]
-        data_format = "value"
-        topic_tag = "topic"
         data_format = "json"
+        topic_tag = "topic"
 
       [[outputs.file]]
         files = ["stdout"]
