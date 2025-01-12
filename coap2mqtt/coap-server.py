@@ -56,6 +56,36 @@ class MQTT_Bridge(resource.Resource):
             code=Code.CONTENT,
             payload=f"Published {len(request.payload)} bytes".encode()
         )
+    
+class MQTT_BridgeBinary(resource.Resource):
+    async def render(self, request: Message):
+        topic = DEFAULT_TOPIC
+        try:
+            requestUri = urlparse(request.get_request_uri())
+            topic = str(requestUri.path).removeprefix('/')
+
+            # Drop some topics that seem unreasonable
+            if topic == None or len(topic) < 1 or topic in ['/', '()', '#', '$']:
+                topic = DEFAULT_TOPIC
+        except:
+            log.error("Unable to get request uri")
+
+        # Log or process the request        
+        log.info(f"Received request: {request.code} on {request.get_request_uri()}")
+        log.info(f"Payload: {len(request.payload)} bytes")
+
+        # Publish to MQTT Broker
+        try:            
+            client.publish(
+                topic=topic, 
+                payload=request.payload.decode(encoding='utf-8')
+            )
+            log.info(f"Published topic '{topic}'")
+        except Exception as e:
+            log.error(f'Failed to publish topic {topic}: "{e}"')
+
+        # Respond with empty
+        return Message(code=Code.CONTENT, payload=b'')
 
 
 class Welcome(resource.Resource):
@@ -170,6 +200,7 @@ async def loop_coap():
     root.add_resource([], Welcome())
     root.add_resource(["time"], TimeResource())
     root.add_resource(["whoami"], WhoAmI())
+    root.add_resource(["messagepack"], MQTT_BridgeBinary())
 
     # sensor/* resources
     root.add_resource(['sensor'], sensor)

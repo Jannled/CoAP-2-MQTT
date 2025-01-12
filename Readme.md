@@ -53,3 +53,8 @@ title CoAP Packet
 135-135: "1"
 136-159: "Payload (if available)"
 ```
+
+- GET: Code 0.01 (or 1 in hexadecimal).
+- POST: Code 0.02 (or 2 in hexadecimal).
+- PUT: Code 0.03 (or 3 in hexadecimal).
+- DELETE: Code 0.04 (or 4 in hexadecimal).
